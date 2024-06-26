@@ -22,6 +22,12 @@
       function HomePage() {
         const names = ["John Wick", "Jason Bourne", "James Bond"];
 
+        const [likes, setLikes] = React.useState(0);
+
+        function handleClick() {
+          setLikes(likes + 1);
+        }
+
         return (
           <div>
             <Header title="Develop. Preview. Ship."/>
@@ -33,6 +39,8 @@
             </ul>
 
             <p>Welcome to the homepage</p>
+
+            <button onClick={handleClick}>Click me {likes} {likes == 1 ? 'time' : 'times'}</button>
           </div>
         )
       }
