@@ -15,17 +15,17 @@
     <script type="text/jsx">
       const app = document.getElementById("app")
 
-      function Header() {
-         return (<h1>Develop. Preview. Ship.</h1>)
+      function Header({ title }) {
+        return (<h1>{title ? title : 'Default Title'}</h1>)
       }
 
       function HomePage() {
-         return (
-            <div>
-               <Header />
-               <p>Welcome to the homepage</p>
-            </div>
-         )
+        return (
+          <div>
+            <Header title="Develop. Preview. Ship."/>
+            <p>Welcome to the homepage</p>
+          </div>
+        )
       }
 
       const root = ReactDOM.createRoot(app);
