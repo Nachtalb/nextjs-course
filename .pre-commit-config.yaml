@@ -26,8 +26,8 @@ repos:
       - id: prettier
         types_or: [markdown, toml, html, css, scss, yaml]
         args: [--config=.prettierrc]
-  - repo: https://github.com/biomejs/pre-commit
-    rev: "v0.4.0"
-    hooks:
-      - id: biome-check
-        additional_dependencies: ["@biomejs/biome@1.8.2"]
+  # - repo: https://github.com/biomejs/pre-commit
+  #   rev: "v0.4.0"
+  #   hooks:
+  #     - id: biome-check
+  #       additional_dependencies: ["@biomejs/biome@1.8.2"]
