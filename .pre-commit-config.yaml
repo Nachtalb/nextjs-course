@@ -20,13 +20,11 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
         files: \.(py|sh|rst|yml|yaml)$
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v4.0.0-alpha.8
+  - repo: local
     hooks:
-      - id: prettier
-        args: [--config=.prettierrc]
-  # - repo: https://github.com/biomejs/pre-commit
-  #   rev: "v0.4.0"
-  #   hooks:
-  #     - id: biome-check
-  #       additional_dependencies: ["@biomejs/biome@1.8.2"]
+      - id: local-biome-check
+        name: biome check
+        entry: bunx @biomejs/biome check --write --files-ignore-unknown=true --no-errors-on-unmatched --unsafe
+        language: system
+        types: [text]
+        files: "\\.(jsx?|tsx?|c(js|ts)|m(js|ts)|d\\.(ts|cts|mts)|jsonc?)$"
